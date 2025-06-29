@@ -1,0 +1,25 @@
+#container {
+  background-color: rgb(200, 200, 200);
+  display: inline-block;
+  box-shadow: 5px 5px 10px;
+}
+
+.box {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+}
+
+#first {
+  background-color: #1abc9c;
+}
+
+#second {
+  background-color: #e67e22;
+}
+
+.button{
+    background-color: #2ecc71;
+    border: 1px solid #27ae60; 
+}

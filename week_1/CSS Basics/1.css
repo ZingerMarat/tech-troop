@@ -1,0 +1,21 @@
+.line1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #fcefdc;
+  font-family: Arial, sans-serif;
+}
+
+.line2 {
+  font-size: 25px;
+  font-weight: bold;
+  color: #e91e63;
+  font-family: Verdana, sans-serif;
+}
+
+.line3 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #5c88da;
+  font-family:serif;
+  text-transform: uppercase;
+}
