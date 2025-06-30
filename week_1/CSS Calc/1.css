@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  height: 100px;
+}
+
+.part1 {
+  background-color: chartreuse;
+  height: 100px;
+  width: calc(100% - 20px);
+}
+
+.part2 {
+  background-color: rgb(53, 105, 1);
+  height: 100px;
+  width: 20px;
+}

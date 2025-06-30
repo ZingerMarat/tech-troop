@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  height: 100px;
+  width: 40%;
+}
+
+.part1 {
+  background-color: chartreuse;
+  border: 2px solid black;
+  height: 100px;
+  width: calc(60% / 3);
+}
+
+.part2 {
+  background-color: chartreuse;
+  border: 2px solid black;
+  height: 100px;
+  width: calc(60% / 3);
+  margin-left: -2px
+}
+
+.part3 {
+  background-color: chartreuse;
+  border: 2px solid black;
+  height: 100px;
+  width: calc(60% / 3);
+  margin-left: -2px
+}
