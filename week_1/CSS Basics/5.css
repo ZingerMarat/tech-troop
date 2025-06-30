@@ -1,0 +1,26 @@
+table
+{
+  border: none;
+  border-collapse: collapse;
+}
+
+td, th{
+    height: 30px;
+    min-width: 40px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr {
+  background-color: #ccffcc;
+}
+
+td{
+    text-align: center;
+}
+
+td:nth-child(2){
+    text-align: left;
+}

@@ -1,0 +1,200 @@
+.personal-title {
+  text-align: center;
+  text-decoration: underline;
+  color: #1f2e46;
+  font-size: xx-large;
+}
+
+.personal h3 {
+  color: #4da6ff;
+  font-size: x-large;
+  border-bottom: 2px solid #4da6ff;
+}
+
+.personal strong {
+  color: #8e44ad;
+}
+
+.personal em {
+  color: #2ecc71;
+}
+
+hr {
+  height: 2px;
+  background-color: black;
+}
+
+.favorite {
+  background-color: #fff8e1;
+  padding: 20px;
+}
+
+.favorite h2 {
+  text-align: center;
+  color: #f36b2c;
+  font-size: xx-large;
+}
+
+.favorite h3 {
+  background-color: #d6edff;
+  color: #5ca9f4;
+  font-size: x-large;
+  height: 50px;
+  line-height: 50px;
+  border-left: 5px solid #5ca9f4;
+  padding-left: 10px;
+}
+
+.list {
+  background-color: #d6edff;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.favorite strong {
+  color: red;
+}
+
+ol,
+ul {
+  padding-left: 15px;
+}
+
+ul {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.portfolio {
+  background-color: #1f2c3b;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  color: white;
+}
+.portfolio h2 {
+  text-align: center;
+  color: #ffa533;
+  font-size: xx-large;
+}
+
+.portfolio h3 {
+  color: #e75c4a;
+  border-bottom: 2px solid #e75c4a;
+}
+
+.portfolio h4 {
+  color: #4fa3dd;
+  font-size: large;
+}
+
+.portfolio strong {
+  color: #f9c74f;
+}
+
+.portfolio a {
+  color: #6bd68c;
+  text-decoration: none;
+}
+
+.portfolio-contact {
+  background-color: #39516c;
+}
+
+.table {
+  background-color: black;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  background-color: #444545;
+  border: 2px solid #2ecc71;
+  color: #cccccc;
+  border-collapse: collapse;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #2b2b2b;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+th {
+  color: #66ff66;
+}
+
+.table td:nth-child(1) {
+  text-align: left;
+  color: #ff9933;
+}
+
+.table h2 {
+  text-decoration: underline;
+  color: #66ff66;
+  font-size: xx-large;
+}
+
+.table caption {
+  color: #ffcc33;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact {
+  background-color: #dedede;
+}
+
+.contact h2 {
+  text-align: center;
+  padding-top: 20px;
+  color: #4da6ff;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+form {
+  width: 500px;
+  height: auto;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: white;
+  font-weight: 600;
+}
+
+.contact fieldset {
+  border-color: #4da6ff;
+  border-radius: 5px;
+  background-color: #dedede;
+}
+
+.contact legend {
+  color: #4da6ff;
+  background-color: white;
+  height: 20px;
+  padding: 5px;
+}
+
+.contact button {
+  margin: 20px 10px 20px 0;
+  height: 40px;
+  width: auto;
+  padding: 0 20px 0 20px;
+  font-weight: 900;
+  font-size: large;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+button.send {
+  background-color: #28a745;
+}
+
+button.reset {
+  background-color: #dc3545;
+}

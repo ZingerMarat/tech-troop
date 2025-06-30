@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+}
+
+.text-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black;
+}
+
+.transparent-text{
+    background-color: blue;
+    font-size: 70px;
+    opacity: 0.3;
+}
+
+.regular-text{
+    background-color: rgb(252, 42, 143);
+    font-size: 70px;
+}
+
