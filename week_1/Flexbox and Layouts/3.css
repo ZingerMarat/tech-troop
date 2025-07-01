@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  height: 600px;
+  border: 1px solid lightgray;
+}
+
+.left,
+.right {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #ccc; /* линия между колонками */
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  background-color: #6793f2;
+  border-radius: 50%;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right p {
+  max-width: 300px;
+  line-height: 1.5;
+}

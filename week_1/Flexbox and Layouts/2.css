@@ -1,0 +1,29 @@
+.flexbox-container-1{
+    display: flex;
+    width: 300px;
+    margin: 10px;
+    background-color: yellow;
+    justify-content: center;
+}
+
+.flexbox-container-2{
+    display: flex;
+    width: 300px;
+    margin: 10px;
+    background-color: yellow;
+}
+
+.flex-item{
+    height: 50px;
+    width: 70px;
+    margin: 5px;
+    background-color: aqua;
+}
+
+.item-2{
+    flex-grow: 2
+}
+
+.item-3{
+    flex-grow: 2
+}

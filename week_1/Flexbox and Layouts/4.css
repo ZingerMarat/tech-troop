@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.container{
+  display: flex;
+  height: 600px;
+  width: 700px;
+  border: 3px solid rgb(254, 103, 103);
+}
+
+.left,
+.right{
+  display: flex;
+  background-color: white;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
+  border-right: 2px solid rgb(254, 103, 103);
+  padding: 0 30px;
+}
+
+.right{
+  align-items: center;
+  padding: 30px;
+  border-left: 2px solid rgb(254, 103, 103);
+}
+
+.line{
+  width: 150px;
+  height: 15px;
+  margin: 5px;
+  background-color: rgb(254, 103, 103);
+}
+
+.line-3{
+  width: 90px;
+}
