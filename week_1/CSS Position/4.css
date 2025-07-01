@@ -1,0 +1,34 @@
+.red-background{
+    background-color: red;
+    width: 425px;
+    height: 300px;
+    border-radius: 15px;
+
+    position: relative;
+}
+
+.silver-edges{
+    background-color: silver;
+    height: 25%;
+    width: 20%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    position: absolute;
+    top: -2%;
+}
+
+.white-space{
+    background-color: white;
+    width: 60%;
+    height: 80%;
+    border-radius: 10px;
+
+    position: absolute;
+    left: 20%;
+    top: -3%;
+}
+
+#edge-2{
+    right:0;
+}

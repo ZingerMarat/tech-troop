@@ -1,0 +1,80 @@
+#example {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  padding-top: 100px;
+}
+
+#example2 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  padding-left: 100px;
+}
+
+/* #parent {
+  display: inline-block;
+  background-color: red;
+  padding: 10px;
+}
+
+#child1 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+#child2 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+} */
+
+#parent {
+  position: relative;
+  display: inline-block;
+  background-color: red;
+  width: 300px;
+  height: 300px;
+}
+
+#child1 {
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+#child2 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+#child3 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+
+#child4 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  background-color: purple;
+}
+
+#child5 {
+  position: absolute;
+  left: calc(100% / 3);
+  top: calc(100% / 3);
+  width: 100px;
+  height: 100px;
+  background-color: white;
+}
