@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="3.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <form>
+      <div class="title">
+        <h2>Contact Form</h2>
+        <p>Get in touch with us</p>
+      </div>
+
+      <fieldset class="personal-data">
+        <div class="name-fields">
+          <div class="input-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" />
+          </div>
+
+          <div class="input-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" />
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="name-fields">
+          <div class="select-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option disabled selected>Select a topic</option>
+              <option value="support">Support</option>
+              <option value="billing">Billing</option>
+              <option value="general">General</option>
+            </select>
+          </div>
+
+          <div class="select-group">
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <div class="input-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="2" cols="30" placeholder="Tell us how we can help..."></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <label for="contactPref" style="font-weight: 600; font-size: 14px; margin-bottom: 5px">Contact Preferences</label>
+
+        <div class="preferences-boxes">
+          <div>
+            <input type="checkbox" id="email" name="contactPref" value="email" />
+            <label for="email">Email Updates</label>
+          </div>
+          <div>
+            <input type="checkbox" id="phone" name="contactPref" value="phone" />
+            <label for="phone">Phone Follow-up</label>
+          </div>
+          <div>
+            <input type="checkbox" id="newsletter" name="contactPref" value="newsletter" />
+            <label for="newsletter">Newsletter</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="buttons">
+        <button type="button">Save Draft</button>
+        <button class="send" type="submit">Send Message</button>
+      </div>
+    </form>
+  </body>
+</html>
