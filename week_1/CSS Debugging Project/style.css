@@ -335,9 +335,12 @@ flex:1;
 
 .member-avatar {
   height: 36px;
+  width: 36px;
   border-radius: 50%;
   background-color: #3498db;
   display: flex;
+  align-items: center;   /*added*/
+  justify-content: center; /*added*/
   color: white;
   font-weight: bold;
   font-size: 0.9rem;
