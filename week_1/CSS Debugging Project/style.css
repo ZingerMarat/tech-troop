@@ -146,6 +146,16 @@ body {
   gap: 2rem;
 }
 
+/*added*/
+.left-column{
+flex:2;
+}
+
+/*added*/
+.right-column{
+flex:1;
+}
+
 .widget {
   background: white;
   border-radius: 8px;
