@@ -256,6 +256,7 @@ body {
   border-radius: 6px;
   font-size: 0.9rem;
   flex: 1;
+  cursor: pointer; /*added*/
 }
 
 /*added*/
