@@ -147,13 +147,13 @@ body {
 }
 
 /*added*/
-.left-column{
-flex:2;
+.left-column {
+  flex: 2;
 }
 
 /*added*/
-.right-column{
-flex:1;
+.right-column {
+  flex: 1;
 }
 
 .widget {
@@ -260,7 +260,7 @@ flex:1;
 
 /*added*/
 .action-btn:hover {
-    background-color: #308bd4;
+  background-color: #308bd4;
 }
 
 .activity-list {
@@ -341,7 +341,7 @@ flex:1;
   border-radius: 50%;
   background-color: #3498db;
   display: flex;
-  align-items: center;   /*added*/
+  align-items: center; /*added*/
   justify-content: center; /*added*/
   color: white;
   font-weight: bold;
@@ -402,6 +402,8 @@ flex:1;
 }
 
 .dashboard-footer {
+  position: sticky; /*added*/
+  margin: -2rem -2rem -1rem -2rem; /*added*/
   background: white;
   padding: 1rem 2rem;
   border-top: 1px solid #e9ecef;
