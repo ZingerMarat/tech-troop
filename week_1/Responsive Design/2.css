@@ -1,0 +1,33 @@
+header {
+  background-color: red;
+  height: 48px;
+}
+
+p {
+  font-size: 18px;
+}
+
+/*Mobile*/
+@media (max-width: 599px) {
+  header {
+    background-color: green;
+    height: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+/*Tablet*/
+@media (min-width: 600px) and (max-width: 899px) {
+  header {
+    background-color: yellow;
+    height: 36px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
