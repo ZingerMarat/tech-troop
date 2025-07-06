@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
   <body>
     <nav>
@@ -127,7 +128,48 @@
       </div>
     </div>
 
-    <div id="contact" class="getInTouch">getInTouch</div>
-    <footer>Footer</footer>
+    <div id="contact" class="getInTouch">
+      <h3>Get In Touch</h3>
+      <div class="get-in-touch-section">
+        <form>
+          <fieldset>
+            <div class="input-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" />
+            </div>
+
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" />
+            </div>
+
+            <div class="input-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="3" cols="30"></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </fieldset>
+        </form>
+
+        <div class="contacts">
+          <h5>Contact Information</h5>
+          <p>📧 zingermarat@gmail.com</p>
+          <p>📱 +972 54 7971184</p>
+          <p>📍 Beer-Sheva, Israel</p>
+          <div class="buttons-wraper">
+            <a href="https://github.com/ZingerMarat" class="link-icon" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/maratzinger/" class="link-icon" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="copyright">© 2025 Marat Zinger. All rights reserved.</div>
+    </footer>
   </body>
 </html>

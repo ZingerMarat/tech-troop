@@ -104,6 +104,11 @@ nav > ul > li > a:hover {
   background-color: #1841d1;
 }
 
+.description button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .profile-image {
   display: flex;
   justify-content: center;
@@ -170,50 +175,50 @@ nav > ul > li > a:hover {
   align-items: center;
 }
 
-.projects h4{
-    margin: 0;
+.projects h4 {
+  margin: 0;
 }
 
 .projects-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
 }
 
 .project {
   border-radius: 10px;
-  width: 32%;
+  width: 30%;
   min-width: 200px;
   height: 400px;
   background-color: white;
   display: flex;
   flex-direction: column;
-  box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.49);
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.49);
 }
 
-.project-img{
-    flex: 1;
-    overflow: hidden;
-    min-height: 120px;
-    border-radius: 10px 10px 0px 0px;
-    background-color: #e2e8f0;
+.project-img {
+  flex: 1;
+  overflow: hidden;
+  min-height: 120px;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #e2e8f0;
 }
 
 .project-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   display: block;
 }
 
-.project-discription{
-    flex: 1;
-    padding: 1rem;
+.project-discription {
+  flex: 1;
+  padding: 1rem;
 }
 
-.project-discription p{
-    color: #65758c
+.project-discription p {
+  color: #65758c;
 }
 
 .project-discription button {
@@ -223,19 +228,140 @@ nav > ul > li > a:hover {
   border-radius: 5px;
   height: 2.5rem;
   width: 6.5rem;
-  font-size:smaller;
+  font-size: smaller;
   font-weight: 600;
+}
+
+.project-discription button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .project-discription button:hover {
   background-color: #d97706;
 }
 
-
 .getInTouch {
-  background-color: blanchedalmond;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+}
+
+.getInTouch h3 {
+  align-self: center;
+}
+
+.getInTouch .get-in-touch-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.get-in-touch-section form {
+  flex: 2;
+}
+
+.get-in-touch-section label {
+  font-size: small;
+  font-weight: 500;
+}
+
+.get-in-touch-section .contacts {
+  flex: 1;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input {
+  border-radius: 5px;
+  border: 1px solid #ebeff5;
+}
+
+.input-group label {
+  margin: 0.5rem 0;
+}
+
+.input-group textarea {
+  border-radius: 5px;
+  border: 1px solid #ebeff5;
+}
+
+.get-in-touch-section button {
+  background-color: #2463eb;
+  border: none;
+  color: white;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+  height: 1.75rem;
+  width: 8rem;
+  font-size: small;
+  font-weight: 600;
+}
+
+.get-in-touch-section button:hover {
+  background-color: #1841d1;
+}
+
+.get-in-touch-section button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.contacts h5 {
+  margin: 0;
+}
+
+.contacts p {
+  font-size: small;
+  color: #64748b;
+}
+
+.buttons-wraper {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  background-color: #2463eb;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.link-icon:hover {
+  background-color: #1841d1;
+  transform: scale(1.15);
 }
 
 footer {
-  background-color: chocolate;
+  display: flex;
+  justify-content: center;
+  background-color: #1e293b;
+  color: white;
+  padding: 1rem;
+}
+
+.copyright{
+    font-size: small;
 }
