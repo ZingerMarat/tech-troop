@@ -326,7 +326,6 @@ nav > ul > li > a:hover {
   border-radius: 10px;
   width: 30%;
   min-width: 200px;
-  height: 400px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -336,9 +335,9 @@ nav > ul > li > a:hover {
 .project-img {
   flex: 1;
   overflow: hidden;
+  max-height: 130px;
   min-height: 120px;
   border-radius: 10px 10px 0px 0px;
-  background-color: #e2e8f0;
 }
 
 .project-img img {
@@ -353,8 +352,26 @@ nav > ul > li > a:hover {
   padding: 1rem;
 }
 
+.project-discription h4 {
+  line-height: 1.4;
+  height: 2.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 .project-discription p {
   color: #65758c;
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-discription button {
