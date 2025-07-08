@@ -4,7 +4,7 @@ const posts = [
   {id: 3, text: "So glad I found this. Bought four already!"}
 ]
 
-for (postIndex in posts){
+for (let postIndex in posts){
   if (posts[postIndex].id === 2){
     posts.splice(postIndex, 1)
   }

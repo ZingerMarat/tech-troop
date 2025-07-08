@@ -1,5 +1,5 @@
 function checkExists(arr, item){
-    for (i of arr){
+    for (let i of arr){
         if (i === item){
             return true
         }

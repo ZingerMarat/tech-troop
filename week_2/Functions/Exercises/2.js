@@ -3,7 +3,7 @@ function isEven(number){
 }
 
 function arrayChecker(arr){
-    for (item of arr){
+    for (let item of arr){
         console.log(isEven(item));        
     }
 

@@ -4,9 +4,9 @@ const dictionary = {
   "C": ["Callous", "Chain", "Coil", "Czech"]
 }
 
-for (letter of Object.keys(dictionary)){
+for (let letter of Object.keys(dictionary)){
   console.log(`Words that begin with ${letter}:`);
-  for (word of dictionary[letter]){
+  for (let word of dictionary[letter]){
     console.log(word);    
   }
 }

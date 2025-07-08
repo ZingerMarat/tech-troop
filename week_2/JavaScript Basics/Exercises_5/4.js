@@ -20,7 +20,7 @@ const posts = [
   },
 ]
 
-for (post of posts){
+for (let post of posts){
   if (post.id === 2){
     for (commentIndex in post.comments){
       if (post.comments[commentIndex].id === 3){
