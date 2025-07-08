@@ -18,20 +18,11 @@ const cleanText =(text) => {
   return cleanedText
 }
 
-const addToCounter = (word) =>{
-  if (word in wordCounts){
-    wordCounts[word] += 1
-  } else {
-    wordCounts[word] = 1
-  }
-}
-
 const countWords = (sentence) => {
-  const arrOfWords = cleanText(sentence)
-
-  for (word of arrOfWords){
-    addToCounter(word)
-  }
+  cleanText(sentence).reduce((acc, word) => {
+                      acc[word] = (acc[word] || 0) + 1;
+                      return acc
+                    }, wordCounts)
 }
 
 countWords(story)
