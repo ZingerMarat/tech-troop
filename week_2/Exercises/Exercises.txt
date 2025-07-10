@@ -1,0 +1,12 @@
+Exercise 1      O(n)
+Exercise 2      O(log n)
+Exercise 3      O(1)
+Exercise 4      O(nm)
+Exercise 5      O(n)
+Exercise 6      
+Exercise 7
+Exercise 8
+Exercise 9      O(1) - green
+                O(logn) - yellow
+                O(n) - blue
+                O(n2) - red
