@@ -1,4 +1,4 @@
-export const view = {
+const view = {
   showWelcome() {
     console.log(`\n=== AutoComplete Trie Console ===\nType 'help' for commands`)
   },
@@ -28,3 +28,5 @@ Commands:
     )
   }
 }
+
+module.exports = view

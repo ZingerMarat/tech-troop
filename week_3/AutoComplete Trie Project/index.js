@@ -1,18 +1,18 @@
-import readline from "readline"
-import { inputHandler } from './controllers/inputHandler.js'
-import { AutoCompleteTrie } from './models/AutoCompleteTrie.js'
-import { view } from './views/consoleView.js'
+const readline = require("readline")
+const inputHandler = require("./controllers/inputHandler")
+const AutoCompleteTrie = require("./models/AutoCompleteTrie.js")
+const view = require("./views/consoleView.js")
 
-export const trie = new AutoCompleteTrie()
+const trie = new AutoCompleteTrie()
 
-export const rl = readline.createInterface({
+const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 })
 
-export const askUser = () => {
+const askUser = () => {
   rl.question("\n> ", (answer) => {
-    inputHandler(answer.trim())
+    inputHandler(answer.trim(), trie, rl, askUser)
   })
 }
 

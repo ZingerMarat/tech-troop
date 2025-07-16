@@ -1,4 +1,4 @@
-export class AutoCompleteTrie {
+class AutoCompleteTrie {
   constructor(value = "root") {
     this.value = value
     this.children = {}
@@ -49,3 +49,5 @@ export class AutoCompleteTrie {
     }
   }
 }
+
+module.exports = AutoCompleteTrie
