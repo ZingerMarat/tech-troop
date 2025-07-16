@@ -29,4 +29,37 @@ class AutoCompleteTrie {
     return true
   }
 
+
+  predictWords(prefix) {
+    const suggestions = []
+    const startPoint = this._getRemainingTree(prefix, this)
+
+    if (!startPoint) {
+      return []
+    }
+
+    this._allWordsHelper(prefix, startPoint, suggestions)
+    return suggestions
+  }
+
+  _getRemainingTree(prefix, node) {
+    for (let char of prefix) {
+      if (node.children[char]) {
+        node = node.children[char]
+      } else {
+        return null
+      }
+    }
+    return node
+  }
+
+  _allWordsHelper(prefix, node, allWords) {
+    if (node.endOfWord) {
+      allWords.push(prefix)
+    }
+
+    for (let char of Object.keys(node.children)) {
+      this._allWordsHelper(prefix + char, node.children[char], allWords)
+    }
+  }
 }
