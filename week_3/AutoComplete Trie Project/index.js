@@ -17,4 +17,16 @@ class AutoCompleteTrie {
     currentNode.endOfWord = true
   }
 
+  findWord(word) {
+    let currentNode = this
+    for (let char of word) {
+      if (currentNode.children[char]) {
+        currentNode = currentNode.children[char]
+      } else {
+        return false
+      }
+    }
+    return true
+  }
+
 }
