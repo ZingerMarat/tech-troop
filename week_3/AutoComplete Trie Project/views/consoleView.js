@@ -1,3 +1,5 @@
+const AutoCompleteTrie = require("../models/AutoCompleteTrie.js")
+
 const view = {
   showWelcome() {
     console.log(`\n=== AutoComplete Trie Console ===\nType 'help' for commands`)
@@ -23,8 +25,11 @@ Commands:
   },
 
   showSuggestions(prefix, list) {
+    const formattedList = list.map(item =>{
+      return `${item} (${AutoCompleteTrie.dictionary[item]})`
+    })
     console.log(
-      `Suggestions for '${prefix}': ${list.length ? list.join(", ") : "No matches found."}`
+      `Suggestions for '${prefix}': ${formattedList.length ? formattedList.join(", ") : "No matches found."}`
     )
   }
 }

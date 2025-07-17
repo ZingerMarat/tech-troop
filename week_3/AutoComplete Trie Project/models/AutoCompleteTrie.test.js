@@ -1,9 +1,15 @@
 const AutoCompleteTrie = require("./AutoCompleteTrie")
 
 describe("AutoCompleteTrie", () => {
+  beforeEach(() => {
+    AutoCompleteTrie.dictionary = {}
+  })
+
   test("addWord adds 'cat' correctly", () => {
     const trie = new AutoCompleteTrie()
     trie.addWord("cat")
+
+    expect(AutoCompleteTrie.dictionary).toEqual({"cat": 0})
 
     expect(trie.children["c"]).toBeDefined()
     expect(trie.children["c"].children["a"]).toBeDefined()
@@ -122,6 +128,26 @@ describe("AutoCompleteTrie", () => {
     trie.addWord("tray")
     trie.addWord("trapeze")
     expect(trie.predictWords("tra").sort()).toEqual(["train", "trapeze", "tray"].sort())
+  })
+
+  test('should increment word count if word exists in dictionary', () => {
+    const trie = new AutoCompleteTrie()
+    trie.addWord('hello')
+
+    expect(AutoCompleteTrie.dictionary['hello']).toBe(0);
+
+    const count1 = trie.incrementWord('hello');
+    expect(count1).toBe(1);
+
+    const count2 = trie.incrementWord('hello');
+    expect(count2).toBe(2);
+  })
+
+  test('should return -1 if word does not exist in dictionary', () => {
+    const trie = new AutoCompleteTrie();
+
+    const result = trie.incrementWord('world');
+    expect(result).toBe(-1);
   })
 })
 

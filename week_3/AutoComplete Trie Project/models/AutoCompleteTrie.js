@@ -1,4 +1,6 @@
 class AutoCompleteTrie {
+  static dictionary = {}
+
   constructor(value = "root") {
     this.value = value
     this.children = {}
@@ -6,6 +8,8 @@ class AutoCompleteTrie {
   }
 
   addWord(word) {
+    AutoCompleteTrie.dictionary[word] = 0
+
     let node = this
     for (let char of word) {
       if (!node.children[char]) {
@@ -31,7 +35,19 @@ class AutoCompleteTrie {
 
     const suggestions = []
     this._allWordsHelper(prefix, start, suggestions)
+
+    suggestions.sort((a, b) => AutoCompleteTrie.dictionary[b] - AutoCompleteTrie.dictionary[a])
+
     return suggestions
+  }
+
+  incrementWord(word) {
+    if (word in AutoCompleteTrie.dictionary) {
+      AutoCompleteTrie.dictionary[word] += 1
+      return AutoCompleteTrie.dictionary[word]
+    } else {
+      return -1
+    }
   }
 
   _getRemainingTree(prefix, node) {
