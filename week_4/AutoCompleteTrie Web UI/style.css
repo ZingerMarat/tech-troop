@@ -2,15 +2,6 @@
   box-sizing: border-box;
 }
 
-/* .app-area {
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  align-items: center;
-  justify-self: center;
-  padding: 20px 20px;
-} */
-
 body {
   background-color: #fff;
   padding: 40px;

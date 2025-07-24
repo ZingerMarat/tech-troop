@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  padding: 40px;
+  justify-content: center;
+    width: 50vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tweet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 30px 0px;
+}
+
+#tweet-input {
+  flex: 1;
+  max-width: 600px;
+  padding: 12px 16px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+#tweet-input::placeholder {
+  color: #aaa;
+}
+
+#add-btn {
+  display: flex;
+  flex: 0.3;
+  justify-content: center;
+  background-color: #0099e5;
+  color: black;
+  border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  padding: 12px 24px;
+  width: 150px;
+}
+
+.post {
+  background-color: #f3f6f7;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-text {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.comments {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.comment-wrapper{
+    display: flex;
+}
+
+.delete-comment {
+  color: red;
+  font-weight: bold;
+  margin-right: 6px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.delete {
+    display: flex;
+    justify-content: center;
+  background-color: #e53935;
+  color: white;
+  padding: 6px 6px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  max-width: 80px;
+}
