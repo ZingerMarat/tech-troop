@@ -30,6 +30,11 @@ export const Renderer = () => {
   }
 
   const renderPokemon = (userPokemon) => {
+    let pokemonName = userPokemon.name
+      .split(" ")
+      .map((word) => word[0].toUpperCase() + word.slice(1))
+      .join(" ")
+
     $(".pokemon").empty()
 
     $(".pokemon").append(`
@@ -40,7 +45,7 @@ export const Renderer = () => {
                 <img src="${userPokemon.picture}" alt="User pokemon picture" style="max-width: 100%; height: auto; border-radius: 50%;">
             </picture>
 
-            <p>${userPokemon.name}</p>
+            <p>${pokemonName}</p>
         
         </div>
         `)
@@ -61,10 +66,10 @@ export const Renderer = () => {
     $(".friends").append(`<h4>Friends</h4>`)
 
     userFriends.forEach((friend) => {
-        const frindElem = $(`<div>${friend.firstName} ${friend.lastName}</div>`)
-         $(".friends").append(frindElem)
+      const frindElem = $(`<div>${friend.firstName} ${friend.lastName}</div>`)
+      $(".friends").append(frindElem)
     })
   }
 
-  return { renderUser, renderQuote, renderPokemon, renderAbout, renderFriends}
+  return { renderUser, renderQuote, renderPokemon, renderAbout, renderFriends }
 }
