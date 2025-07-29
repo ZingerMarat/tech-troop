@@ -30,6 +30,8 @@ export const UserModel = () => {
   }
 
   const _setFriends = (loadedFriends) => {
+    _friends = []
+    
     loadedFriends.forEach((friend) => {
       _friends.push({ firstName: friend.name.first, lastName: friend.name.last })
     })
