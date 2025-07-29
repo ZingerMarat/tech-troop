@@ -8,6 +8,7 @@ export const UserModel = () => {
   const loadUserInfo = async () => {
     try {
       const response = await fetch("https://randomuser.me/api/?results=7")
+      //const response = await fetch("https://raghfghfgndomuser.me/api/?results=7")
       const data = (await response.json()).results
       const loadedUser = data[0]
       const loadedFriends = data.slice(1)
@@ -16,6 +17,8 @@ export const UserModel = () => {
       _setFriends(loadedFriends)
     } catch (error) {
       console.error("Failed to fetch user:", error)
+      _user = null
+      _friends = null
     }
   }
 
@@ -49,6 +52,7 @@ export const UserModel = () => {
       //console.log(_kenyeQuote);
     } catch (error) {
       console.error("Failed to fetch quote:", error)
+      _kenyeQuote = null
     }
   }
 
@@ -65,6 +69,7 @@ export const UserModel = () => {
       //console.log(_pokemon);
     } catch (err) {
       console.error("Failed to fetch pokemon:", err)
+      _pokemon = null
     }
   }
 
@@ -78,6 +83,7 @@ export const UserModel = () => {
       //console.log(_about);
     } catch (err) {
       console.error("Failed to fetch about:", err)
+      _about = null
     }
   }
 

@@ -1,5 +1,15 @@
 export const Renderer = () => {
   const renderUser = (user) => {
+    if (!user) {
+      $(".user").empty()
+      $(".user").append(`<h4>User Info</h4>`)
+      $(".user").append(`
+        <div>
+        Cannot be loaded right now
+        </div>`)
+      return
+    }
+
     $(".user").empty()
 
     $(".user").append(`
@@ -19,6 +29,15 @@ export const Renderer = () => {
   }
 
   const renderQuote = (userQuote) => {
+    if (!userQuote) {
+      $(".quote").empty()
+      $(".quote").append(`
+        <h4>Favorite quote</h4>
+        <p>Cannot be loaded right now</p>
+        `)
+      return
+    }
+
     $(".quote").empty()
 
     const quote = userQuote.replace(/\n/g, "<br>")
@@ -30,6 +49,15 @@ export const Renderer = () => {
   }
 
   const renderPokemon = (userPokemon) => {
+    if (!userPokemon) {
+      $(".pokemon").empty()
+      $(".pokemon").append(`
+        <h4>Favorite pokemon</h4>
+        <div>Cannot be loaded right now</div>
+        `)
+      return
+    }
+
     let pokemonName = userPokemon.name
       .split(" ")
       .map((word) => word[0].toUpperCase() + word.slice(1))
@@ -52,6 +80,15 @@ export const Renderer = () => {
   }
 
   const renderAbout = (userAbout) => {
+    if (!userAbout) {
+      $(".about").empty()
+      $(".about").append(`
+        <h4>Favorite pokemon</h4>
+        <p>Cannot be loaded right now</p>
+        `)
+      return
+    }
+    
     $(".about").empty()
 
     $(".about").append(`
@@ -61,6 +98,16 @@ export const Renderer = () => {
   }
 
   const renderFriends = (userFriends) => {
+    if (!userFriends) {
+      $(".friends").empty()
+      $(".friends").append(`<h4>Friends</h4>`)
+      $(".friends").append(`
+        <div>
+        Cannot be loaded right now
+        </div>`)
+      return
+    }
+
     $(".friends").empty()
 
     $(".friends").append(`<h4>Friends</h4>`)
