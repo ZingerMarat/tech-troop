@@ -1,6 +1,7 @@
 export const User = () => {
   let _user = {}
   let _friends = []
+  let _kenyeQuote = ''
 
   const loadUserInfo = async () => {
     try {
@@ -23,7 +24,7 @@ export const User = () => {
     _user.state = loadedUser.location.state
     _user.picture = loadedUser.picture.medium
 
-    console.log("User saved:", _user)
+    //console.log("User saved:", _user)
   }
 
   const _setFriends = (loadedFriends) => {
@@ -32,11 +33,24 @@ export const User = () => {
         _friends.push({firstName: friend.name.first, lastName: friend.name.last})
     })
 
-    console.log("Friends saved:", _friends)
+    //console.log("Friends saved:", _friends)
   }
 
-  return { loadUserInfo }
+  const loadKanyeQuote = async () => {
+    try{
+        const response = await fetch('https://api.kanye.rest')
+        const data = await response.json()
+
+        _kenyeQuote = `" ${data.quote} " \n - Kanye West`
+
+        //console.log(_kenyeQuote);
+    } catch (error) {
+      console.error("Failed to fetch quote:", error)
+    }
+  }
+
+  return { loadUserInfo, loadKanyeQuote}
 }
 
 const testUser = User()
-testUser.loadUserInfo()
+testUser.loadKanyeQuote()
