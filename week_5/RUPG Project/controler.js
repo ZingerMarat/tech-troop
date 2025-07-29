@@ -39,6 +39,10 @@ document.getElementById("save-btn").addEventListener("click", () => {
 })
 
 document.getElementById("load-btn").addEventListener("click", () => {
+  const userList = document.getElementById("user-list")
+  userList.classList.toggle("hidden")
+  userList.innerHTML = ""
+
   const savedUsers = JSON.parse(localStorage.getItem("users") || "{}")
 
   const userIds = Object.keys(savedUsers)
@@ -47,17 +51,27 @@ document.getElementById("load-btn").addEventListener("click", () => {
     return
   }
 
-  const selectedUser = savedUsers[userIds[0]]
+  userIds.forEach((userId) => {
+    const li = document.createElement("li")
+    li.textContent = userId
+    li.addEventListener("click", () => {
+      const selectedUser = savedUsers[userId]
 
-  userModel.setUser(selectedUser.user)
-  userModel.setQuote(selectedUser.quote)
-  userModel.setPokemon(selectedUser.pokemon)
-  userModel.setAbout(selectedUser.about)
-  userModel.setFriends(selectedUser.friends)
+      userModel.setUser(selectedUser.user)
+      userModel.setQuote(selectedUser.quote)
+      userModel.setPokemon(selectedUser.pokemon)
+      userModel.setAbout(selectedUser.about)
+      userModel.setFriends(selectedUser.friends)
 
-  render.renderUser(selectedUser.user)
-  render.renderQuote(selectedUser.quote)
-  render.renderPokemon(selectedUser.pokemon)
-  render.renderAbout(selectedUser.about)
-  render.renderFriends(selectedUser.friends)
+      render.renderUser(selectedUser.user)
+      render.renderQuote(selectedUser.quote)
+      render.renderPokemon(selectedUser.pokemon)
+      render.renderAbout(selectedUser.about)
+      render.renderFriends(selectedUser.friends)
+
+      userList.classList.add("hidden")
+    })
+
+    userList.appendChild(li)
+  })
 })
