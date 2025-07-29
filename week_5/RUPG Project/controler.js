@@ -2,6 +2,7 @@ export const User = () => {
   let _user = {}
   let _friends = []
   let _kenyeQuote = ''
+  let _pokemon = {}
 
   const loadUserInfo = async () => {
     try {
@@ -49,8 +50,24 @@ export const User = () => {
     }
   }
 
-  return { loadUserInfo, loadKanyeQuote}
+  const loadPokemon = async () => {
+    try {
+        const randomID = Math.floor(Math.random() * 1000) + 1
+
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomID}`)
+        const data = await response.json()
+
+        _pokemon.name = data.name
+        _pokemon.picture = data.sprites.front_default
+
+        //console.log(_pokemon);
+    } catch (err) {
+        console.error("Failed to fetch pokemon:", err)
+    }
+  }
+
+  return { loadUserInfo, loadKanyeQuote, loadPokemon}
 }
 
 const testUser = User()
-testUser.loadKanyeQuote()
+testUser.loadPokemon()
