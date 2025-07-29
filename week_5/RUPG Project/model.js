@@ -31,7 +31,7 @@ export const UserModel = () => {
 
   const _setFriends = (loadedFriends) => {
     _friends = []
-    
+
     loadedFriends.forEach((friend) => {
       _friends.push({ firstName: friend.name.first, lastName: friend.name.last })
     })
@@ -81,7 +81,37 @@ export const UserModel = () => {
     }
   }
 
-  return { getUser: () => _user, getFriends: () => _friends, getQuote: () => _kenyeQuote, getPokemon: () => _pokemon, getAbout: () => _about, loadUserInfo, loadKanyeQuote, loadPokemon, loadAbout }
+  return {
+    // Getters
+    getUser: () => _user,
+    getFriends: () => _friends,
+    getQuote: () => _kenyeQuote,
+    getPokemon: () => _pokemon,
+    getAbout: () => _about,
+
+    // Setters
+    setUser: (user) => {
+      _user = user
+    },
+    setFriends: (friends) => {
+      _friends = friends
+    },
+    setQuote: (quote) => {
+      _kenyeQuote = quote
+    },
+    setPokemon: (pokemon) => {
+      _pokemon = pokemon
+    },
+    setAbout: (about) => {
+      _about = about
+    },
+
+    // Loading
+    loadUserInfo,
+    loadKanyeQuote,
+    loadPokemon,
+    loadAbout,
+  }
 }
 
 const userModel = UserModel()
