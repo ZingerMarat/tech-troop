@@ -1,0 +1,37 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+    
+.User {
+    grid-column: span 4 / span 4;
+    background-color: bisque;
+}
+
+.Friends {
+    grid-row: span 3 / span 3;
+    grid-column-start: 5;
+    background-color: aquamarine;
+}
+
+.Quote {
+    grid-column: span 2 / span 2;
+    grid-row-start: 2;
+    background-color: antiquewhite;
+}
+
+.Pokemon {
+    grid-column: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 2;
+    background-color: aquamarine;
+}
+
+.About {
+    grid-column: span 4 / span 4;
+    grid-row-start: 3;
+    background-color: blanchedalmond;
+}
+        
