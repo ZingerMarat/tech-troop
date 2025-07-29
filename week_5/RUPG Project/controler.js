@@ -3,6 +3,7 @@ export const User = () => {
   let _friends = []
   let _kenyeQuote = ''
   let _pokemon = {}
+  let _about = ''
 
   const loadUserInfo = async () => {
     try {
@@ -66,8 +67,21 @@ export const User = () => {
     }
   }
 
-  return { loadUserInfo, loadKanyeQuote, loadPokemon}
+  const loadAbout = async () => {
+    try{
+        const response = await fetch('https://baconipsum.com/api/?type=all-meat&paras=2&start-with-lorem=1')
+        const data = await response.json()
+
+        _about = data[0]
+
+        //console.log(_about);
+    } catch (err){
+        console.error("Failed to fetch about:", err)
+    }
+  }
+
+  return { loadUserInfo, loadKanyeQuote, loadPokemon, loadAbout}
 }
 
 const testUser = User()
-testUser.loadPokemon()
+testUser.loadAbout()
