@@ -81,3 +81,6 @@ export const UserModel = () => {
 
   return { getUser: () => _user, getFriends: () => _friends, getQuote: () => _kenyeQuote, getPokemon: () => _pokemon, getAbout: () => _about, loadUserInfo, loadKanyeQuote, loadPokemon, loadAbout }
 }
+
+const userModel = UserModel()
+userModel.loadAbout()
