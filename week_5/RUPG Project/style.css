@@ -73,11 +73,31 @@
 .user,
 .quote,
 .pokemon,
-.about{
+.about,
+.btn{
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     border: 1px solid #e0e0e0;
     flex: 1
 }
-        
+
+.btns{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+  background-color: aquamarine;
+  height: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.2;
+  transition: background-color 0.2s ease;
+}
+
+.btn:active {
+  background-color: rgb(113, 229, 190);
+}
