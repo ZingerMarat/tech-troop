@@ -1,17 +1,49 @@
 export const Render = () => {
-  const renderSearchResults = (loadedData) => {
+  const renderSearchResults = (query, loadedData) => {
+    const $companyList = $("#company-list")
+    $companyList.empty()
+
     loadedData.forEach((item) => {
-      const $listItem = $(`<a href=./company.html?symbol=${item.symbol} class="list-group-item list-group-item-action">
+      let highlightedName = highlightText(query, item.name)
+      let highlightedSymbol = highlightText(query, item.symbol)
+
+      const $change = $('<div class="stock-change"></div>')
+        .text(`(${item.changes}%)`)
+        .css("color", item.changes >= 0 ? "green" : "red")
+
+      const $listItem = $(`
+                      <a href=./company.html?symbol=${item.symbol} class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-2">
                             <picture>
                               <source srcset="${item.image}" type="image/webp">
-                              <img src="${item.image}" alt="" style="max-width: 100%; height: 2rem; border-radius: 50%;">
+                              <img src="${item.image}" alt="" style="width: 2rem; height: 2rem; border-radius: 50%;">
                             </picture>
-                            ${item.name} (${item.symbol})
-                          </a>`)
-      const $change = $('<div id="stock-percent"></div>').text(`(${item.changes}%)`).css("color", item.changes >= 0 ? "green" : "red")
+                            <div>${highlightedName} (${highlightedSymbol})</div>
+                        </div>
+                      </a>
+                    `)
+
       $listItem.append($change)
-      $("#company-list").append($listItem)
+      $companyList.append($listItem)
     })
+  }
+
+  const highlightText = (query, name) => {
+    let highlighted
+
+    const index = name.toLowerCase().indexOf(query.toLowerCase())
+
+    if (index === -1) {
+      highlighted = name
+    } else {
+      const before = name.slice(0, index)
+      const match = name.slice(index, index + query.length)
+      const after = name.slice(index + query.length)
+
+      highlighted = `${before}<span class="highlight">${match}</span>${after}`
+    }
+
+    return highlighted
   }
 
   const renderSearchError = (message) => {

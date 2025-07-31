@@ -106,3 +106,23 @@
     transform: translateX(-100%);
   }
 }
+
+.highlight {
+  font-weight: bold;
+  color: #000;
+  background-color: #e6f5b3;
+  margin: 0;
+  padding: 0;
+}
+
+.company-name {
+  display: inline-block;
+}
+
+.stock-change {
+  font-size: 0.9rem;
+}
+
+.symbol {
+  font-size: 0.8rem;
+}

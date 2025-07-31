@@ -49,14 +49,14 @@ async function handleSearch() {
 
   try {
     // TODO: enable real data fetch
-    // await stockExchange.loadDataWithProfile(query)
+    //await stockExchange.loadDataWithProfile(query)
     const data = stockExchange.getSearchProfilesData()
 
     if (!data || data.length === 0) {
       console.log("No results found.")
       render.renderSearchError("No results found.")
     } else {
-      render.renderSearchResults(data)
+      render.renderSearchResults(query, data)
     }
   } catch (err) {
     console.error("Error loading data:", err.message)

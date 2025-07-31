@@ -628,7 +628,7 @@ export const StockExchange = () => {
     await loadData(query)
 
     const symbols = _data.map(company =>  company.symbol).join(',')
-    console.log(symbols);
+    //console.log(symbols);
 
     await loadCompanyProfile(symbols)
   }
