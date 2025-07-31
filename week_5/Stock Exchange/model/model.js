@@ -615,7 +615,7 @@ export const StockExchange = () => {
 
   const getSearchProfilesData = () => {
     const data = _data.map(company => ({...company, ..._companysProfileData.find(elem => elem.symbol === company.symbol)}))
-    console.log(data);
+    //console.log(data);
     return data
   }
 
