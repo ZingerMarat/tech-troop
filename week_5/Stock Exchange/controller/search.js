@@ -14,8 +14,8 @@ document.getElementById("srch-btn").addEventListener("click", async () => {
 
   try {
     //TODO: remove before fligth
-    //await stockExchange.loadData(query)
-    const data = stockExchange.getData()
+    //await stockExchange.loadDataWithProfile(query)
+    const data = stockExchange.getSearchProfilesData()
 
     if (!data || data.length === 0) {
       console.log("No results found.")

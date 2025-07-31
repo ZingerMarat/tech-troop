@@ -1,7 +1,15 @@
 export const Render = () => {
   const renderSearchResults = (loadedData) => {
     loadedData.forEach((item) => {
-      const $listItem = $(`<a href=./company.html?symbol=${item.symbol} class="list-group-item list-group-item-action">${item.name} (${item.symbol})</a>`)
+      const $listItem = $(`<a href=./company.html?symbol=${item.symbol} class="list-group-item list-group-item-action">
+                            <picture>
+                              <source srcset="${item.image}" type="image/webp">
+                              <img src="${item.image}" alt="" style="max-width: 100%; height: 2rem; border-radius: 50%;">
+                            </picture>
+                            ${item.name} (${item.symbol})
+                          </a>`)
+      const $change = $('<div id="stock-percent"></div>').text(`(${item.changes}%)`).css("color", item.changes >= 0 ? "green" : "red")
+      $listItem.append($change)
       $("#company-list").append($listItem)
     })
   }
@@ -26,7 +34,9 @@ export const Render = () => {
   const renderCompanyInfo = (name, price, change) => {
     $("#company-info").text(name)
     $("#stock-price").text(`Stock price: $${price}`)
-    $("#stock-percent").text(`(${change}%)`).css("color", change >= 0 ? "green" : "red")
+    $("#stock-percent")
+      .text(`(${change}%)`)
+      .css("color", change >= 0 ? "green" : "red")
   }
 
   const renderCompanyDescriptionWithToggle = (description) => {
@@ -56,10 +66,10 @@ export const Render = () => {
   }
 
   const renderCompanyProfile = (companyData) => {
-    console.log(companyData)
+    //console.log(companyData)
 
     renderCompanyImage(companyData.image)
-    renderCompanyInfo(companyData.companyName, companyData.price, companyData.change)
+    renderCompanyInfo(companyData.companyName, companyData.price, companyData.changes)
     renderCompanyDescriptionWithToggle(companyData.description)
   }
 
@@ -73,12 +83,12 @@ export const Render = () => {
             label: "Stock Price History",
             data: historyData.map((row) => row.close),
             borderColor: "gray",
-            pointRadius: 0
+            pointRadius: 0,
           },
         ],
       },
     })
   }
 
-  return { renderSearchResults, renderSearchError, renderCompanyProfile, renderChart , renderInfoError}
+  return { renderSearchResults, renderSearchError, renderCompanyProfile, renderChart, renderInfoError }
 }

@@ -10,17 +10,21 @@ const companyController = async () => {
   loader.style.marginTop = "50%"
 
   try {
-    //TODO: remove before fligth
+    //TODO: run this func in search controller and just get the data from getProfileData
     //await stockExchange.loadCompanyProfile(symbol)
+
+    //TODO: remove before fligth
     //await stockExchange.loadCompanyHistory(symbol)
-    const profileData = stockExchange.getProfileData()
+    const profileData = stockExchange.getProfileData(symbol)
     const historyData = stockExchange.getHistoryData()
+
+    console.log(profileData);
 
     if (!profileData && !historyData) {
       console.log("No results found.")
       render.renderInfoError("No results found.")
     } else {
-      render.renderCompanyProfile(profileData[0])
+      render.renderCompanyProfile(profileData)
       render.renderChart(historyData)
     }
   } catch (err) {
