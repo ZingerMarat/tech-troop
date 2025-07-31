@@ -394,9 +394,5 @@ export function Marquee(div) {
 
       this.$marquee.append($marqueeItem)
     })
-
-    const marquee = document.getElementById(this.$marquee.attr("id"))
-    const clone = marquee.cloneNode(true)
-    marquee.parentNode.appendChild(clone)
   }
 }

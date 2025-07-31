@@ -3,22 +3,53 @@ import { Render } from "../view/view.js"
 import { Marquee } from "../model/marquee.js"
 import { secret } from "../secrets.js"
 
-const stockExchange = StockExchange()
-const render = Render()
-new Marquee($("#marquee")).create()
+//Main Init
+function init() {
+  setupMarquee()
+  setupSearch()
+  setupSearchHandler()
+}
 
+//Setup marquee scrolling stock list
+function setupMarquee() {
+  new Marquee($("#marquee")).create()
+}
 
-document.getElementById("srch-btn").addEventListener("click", async () => {
+//Render the search form and results container
+function setupSearch() {
+  const $searchForm = $(".search-input")
+  $searchForm.append(`
+    <div class="input-group mb-3">
+      <input id="input-field" type="text" class="form-control" placeholder="search for company" />
+      <button class="btn btn-outline-secondary" type="button" id="srch-btn">Search</button>
+    </div>
+  `)
+
+  const $result = $(".list-wrapper")
+  $result.append(`
+    <div id="loader" class="spinner-border text-primary mx-auto" role="status" style="display: none">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <ul id="company-list" class="list-group list-group-flush hidden w-100"></ul>
+  `)
+}
+
+//Handle search button click
+function setupSearchHandler() {
+  document.getElementById("srch-btn").addEventListener("click", handleSearch)
+}
+
+//Search logic: fetch and render data
+async function handleSearch() {
   $("#company-list").empty()
-
   const query = document.getElementById("input-field").value
   const loader = document.getElementById("loader")
 
   loader.style.display = "inline-block"
 
   try {
-    //TODO: remove before fligth
-    //await stockExchange.loadDataWithProfile(query)
+    // TODO: enable real data fetch
+    // await stockExchange.loadDataWithProfile(query)
     const data = stockExchange.getSearchProfilesData()
 
     if (!data || data.length === 0) {
@@ -33,4 +64,9 @@ document.getElementById("srch-btn").addEventListener("click", async () => {
   } finally {
     loader.style.display = "none"
   }
-})
+}
+
+const stockExchange = StockExchange()
+const render = Render()
+
+init()

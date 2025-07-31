@@ -623,7 +623,6 @@ export const StockExchange = () => {
     return _companyHistoryData
   }
 
-  //TODO: change my name
   const loadDataWithProfile = async (query) => {
 
     await loadData(query)
