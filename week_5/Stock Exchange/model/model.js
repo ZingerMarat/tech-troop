@@ -215,7 +215,7 @@ const mockCompanyHistoryData = [
   { date: "2025-03-07", close: 239.07 },
   { date: "2025-03-06", close: 235.33 },
 ]
-const mockCompanysProfileData = [
+const mockCompaniesProfileData = [
   {
     symbol: 'AAL',
     price: 11.51,
@@ -601,7 +601,7 @@ const mockCompanysProfileData = [
 export const StockExchange = () => {
   let _data = mockData
   let _companyHistoryData = mockCompanyHistoryData
-  let _companysProfileData = mockCompanysProfileData
+  let _companiesProfileData = mockCompaniesProfileData
 
   const apiKey = secret.api_key
 
@@ -610,11 +610,11 @@ export const StockExchange = () => {
   }
 
   const getProfileData = (companySymbol) => {
-    return _companysProfileData.find(elem => elem.symbol === companySymbol)
+    return _companiesProfileData.find(elem => elem.symbol === companySymbol)
   }
 
   const getSearchProfilesData = () => {
-    const data = _data.map(company => ({...company, ..._companysProfileData.find(elem => elem.symbol === company.symbol)}))
+    const data = _data.map(company => ({...company, ..._companiesProfileData.find(elem => elem.symbol === company.symbol)}))
     //console.log(data);
     return data
   }
@@ -653,7 +653,7 @@ export const StockExchange = () => {
   }
 
   const loadCompanyProfile = async (symbol) => {
-    console.log("symbol: " + symbol)
+    //console.log("symbol: " + symbol)
     try {
       const res = await fetch(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${apiKey}`)
 
@@ -662,12 +662,12 @@ export const StockExchange = () => {
       }
 
       const data = await res.json()
-      console.log(data)
+      //console.log(data)
 
-      _companysProfileData = data
+      _companiesProfileData = data
     } catch (err) {
       console.error("Load Company Error" + err.message)
-      _companysProfileData = null
+      _companiesProfileData = null
     }
   }
 
