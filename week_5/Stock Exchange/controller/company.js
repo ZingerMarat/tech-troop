@@ -18,8 +18,6 @@ const companyController = async () => {
     const profileData = stockExchange.getProfileData(symbol)
     const historyData = stockExchange.getHistoryData()
 
-    console.log(profileData);
-
     if (!profileData && !historyData) {
       console.log("No results found.")
       render.renderInfoError("No results found.")

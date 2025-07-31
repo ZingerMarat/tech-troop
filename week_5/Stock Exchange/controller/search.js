@@ -56,7 +56,7 @@ async function handleSearch() {
       console.log("No results found.")
       render.renderSearchError("No results found.")
     } else {
-      render.renderSearchResults(query, data)
+      render.renderSearchResults(query, data, stockExchange.getProfileData)
     }
   } catch (err) {
     console.error("Error loading data:", err.message)

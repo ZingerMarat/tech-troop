@@ -1,5 +1,5 @@
 export const Render = () => {
-  const renderSearchResults = (query, loadedData) => {
+  const renderSearchResults = (query, loadedData, callback) => {
     const $companyList = $("#company-list")
     $companyList.empty()
 
@@ -7,23 +7,26 @@ export const Render = () => {
       let highlightedName = highlightText(query, item.name)
       let highlightedSymbol = highlightText(query, item.symbol)
 
-      const $change = $('<div class="stock-change"></div>')
-        .text(`(${item.changes}%)`)
-        .css("color", item.changes >= 0 ? "green" : "red")
+      const $button = $("<button class='btn btn-outline-secondary px-1.5 py-0'>compare</button>")
+      $button.on("click", (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        callback(item.symbol)
+      })
 
       const $listItem = $(`
                       <a href=./company.html?symbol=${item.symbol} class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center gap-2">
+                        <div class="company-search-item d-flex align-items-center gap-2">
                             <picture>
                               <source srcset="${item.image}" type="image/webp">
                               <img src="${item.image}" alt="" style="width: 2rem; height: 2rem; border-radius: 50%;">
                             </picture>
                             <div>${highlightedName} (${highlightedSymbol})</div>
+                            <div class="stock-change" style="color : ${item.changes >= 0 ? "green" : "red"}">(${item.changes}%)</div>
                         </div>
                       </a>
                     `)
-
-      $listItem.append($change)
+      $listItem.append($button)
       $companyList.append($listItem)
     })
   }
