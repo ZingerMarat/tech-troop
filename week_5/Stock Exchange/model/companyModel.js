@@ -11,7 +11,6 @@ export function CompanyInfo(div, symbol) {
   this._showLoader = () => {
     this.$companyDIV.find(".loader").css({
       display: "inline-block",
-      "margin-top": "50%"
     })
   }
 
@@ -20,13 +19,8 @@ export function CompanyInfo(div, symbol) {
   }
 
   this._renderStructure = () => {
-    console.log("Rendering company: " + this.symbol)
 
     this.$companyDIV.append(`
-
-        <div class="loader spinner-border text-primary mx-auto" role="status" style="display: none">
-          <span class="visually-hidden">Loading...</span>
-        </div>
 
         <div class="company">
           <div class="company-img"></div>
@@ -40,22 +34,29 @@ export function CompanyInfo(div, symbol) {
 
         <p class="company-desc"></p>
 
+        <div class="loader spinner-border text-primary mx-auto my-auto" role="status" style="display: none">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+
         <canvas class="company-chart" id="${this.symbol}" width="600" height="300"></canvas>
 
     `)
   }
 
   this.load = async () => {
-    this._renderStructure()
     this._showLoader()
 
     try {
-      const profileData = stockExchange.getProfileData(this.symbol)
+      await stockExchange.loadCompanyProfile(this.symbol)
+      const profileData = await stockExchange.getProfileData(this.symbol)
+      
 
       if (!profileData) {
         console.warn("No results found.")
         render.renderInfoError("No results found.")
       } else {
+        this._renderStructure()
+
         render.renderCompanyProfile(profileData, this.$companyDIV)
       }
     } catch (err) {
@@ -70,13 +71,14 @@ export function CompanyInfo(div, symbol) {
     this._showLoader()
 
     try {
+      await stockExchange.loadCompanyHistory(this.symbol)
       const historyData = stockExchange.getHistoryData()
 
       if (!historyData) {
         console.warn("No chart data found.")
         render.renderInfoError("No chart data found.")
       } else {
-        render.renderChart(historyData, this.symbol, this.$companyDIV )
+        render.renderChart(historyData, this.symbol, this.$companyDIV)
       }
     } catch (err) {
       console.error("Error loading chart data:", err.message)

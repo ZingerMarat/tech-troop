@@ -12,7 +12,6 @@ export function CompareList() {
   })
 
   this.addToList = (company) => {
-    //console.log(company)
 
     if (!this.companiesList.find((c) => c.symbol === company.symbol)) {
       this.companiesList.push(company)

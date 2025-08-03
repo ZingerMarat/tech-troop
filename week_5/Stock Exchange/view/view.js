@@ -23,7 +23,7 @@ export const Render = () => {
   }
 
   const renderCompanyDescriptionWithToggle = (description, $container) => {
-    const maxLength = 500
+    const maxLength = 300
     let isExpanded = false
 
     $container.find(".company-desc").after(`<a href="#" class="toggle-desc">Show more</a>`)

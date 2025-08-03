@@ -3,8 +3,6 @@ import { CompanyInfo } from "../model/companyModel.js"
 const urlParams = new URLSearchParams(window.location.search)
 const symbols = urlParams.get("symbols").split(",")
 
-console.log(symbols)
-
 async function renderAllCompanies() {
   for (const symbol of symbols) {
     const $compInfo = $(`<div class="company-wrapper" id="${symbol}"></div>`)

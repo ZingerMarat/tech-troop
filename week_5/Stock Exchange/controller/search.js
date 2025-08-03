@@ -1,6 +1,6 @@
-import { StockExchange } from "../model/model.js"
+import { StockExchange } from "../model/stockModel.js"
 import { Render } from "../view/view.js"
-import { Marquee } from "../model/marquee.js"
+import { Marquee } from "../model/marqueeModel.js"
 import { secret } from "../secrets.js"
 import { CompareList } from "../model/compareListModel.js"
 
@@ -49,12 +49,10 @@ async function handleSearch() {
   loader.style.display = "inline-block"
 
   try {
-    // TODO: enable real data fetch
-    //await stockExchange.loadDataWithProfile(query)
+    await stockExchange.loadDataWithProfile(query)
     const data = stockExchange.getSearchProfilesData()
 
     if (!data || data.length === 0) {
-      console.log("No results found.")
       render.renderSearchError("No results found.")
     } else {
       render.renderSearchResults(query, data, new CompareList().addToList)

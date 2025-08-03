@@ -354,13 +354,11 @@ const mockStockData = [
 
 export function Marquee(div) {
   this.$marquee = div
-  //TODO: remove before flight
-  //this.stockData = []
-  this.stockData = mockStockData
+  this.stockData = []
+  //this.stockData = mockStockData
 
   this.create = async () => {
-    //TODO: remove before flight
-    //await this._fetchData()
+    await this._fetchData()
     this._createMarguee()
   }
 
@@ -381,18 +379,18 @@ export function Marquee(div) {
   }
 
   this._createMarguee = () => {
-    //console.log(this.stockData)
+    if (this.stockData) {
+      this.stockData.forEach((elem) => {
+        const color = elem.changesPercentage >= 0 ? "green" : "red"
 
-    this.stockData.forEach((elem) => {
-      const color = elem.changesPercentage >= 0 ? "green" : "red"
-
-      const $marqueeItem = $(`
+        const $marqueeItem = $(`
                             <div id="marquee-item">
                                 ${elem.ticker} <span style="color: ${color}">($${elem.price})</span>
                             </div>
                             `)
 
-      this.$marquee.append($marqueeItem)
-    })
+        this.$marquee.append($marqueeItem)
+      })
+    }
   }
 }
