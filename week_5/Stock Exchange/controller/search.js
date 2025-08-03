@@ -2,6 +2,7 @@ import { StockExchange } from "../model/model.js"
 import { Render } from "../view/view.js"
 import { Marquee } from "../model/marquee.js"
 import { secret } from "../secrets.js"
+import { CompareList } from "../model/compareListModel.js"
 
 //Main Init
 function init() {
@@ -56,7 +57,7 @@ async function handleSearch() {
       console.log("No results found.")
       render.renderSearchError("No results found.")
     } else {
-      render.renderSearchResults(query, data, stockExchange.getProfileData)
+      render.renderSearchResults(query, data, new CompareList().addToList)
     }
   } catch (err) {
     console.error("Error loading data:", err.message)

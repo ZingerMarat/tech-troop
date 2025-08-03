@@ -2,16 +2,49 @@
   box-sizing: border-box;
 }
 
+.main-wrapper{
+  width: 50%;
+  display: flex;
+  justify-self: center;
+}
+
+.compare-list-wrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.compare-list{
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.compare-btn {
+  flex: 0 0 auto;
+}
+
+
+.compared-company{
+  display: flex;
+  justify-content: space-between;
+  width: 6rem;
+  background-color: #6c757d;
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 5px;
+}
+
 .search-area {
   display: flex;
   justify-self: center;
   justify-content: center;
-  width: 50%;
+  width: 100%;
 }
 
 .search-area {
   position: relative;
-  padding-top: 1rem;
 }
 
 .list-wrapper {

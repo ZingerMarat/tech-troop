@@ -11,7 +11,7 @@ export const Render = () => {
       $button.on("click", (e) => {
         e.preventDefault()
         e.stopPropagation()
-        callback(item.symbol)
+        callback(item)
       })
 
       const $listItem = $(`
