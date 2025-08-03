@@ -8,32 +8,41 @@ export function CompanyInfo(div, symbol) {
   this.$companyDIV = div
   this.symbol = symbol
 
-  this._showLoader = () => $("#loader").css("display", "inline-block").css("margin-top", "50%")
-  this._hideLoader = () => $("#loader").css("display", "none")
+  this._showLoader = () => {
+    this.$companyDIV.find(".loader").css({
+      display: "inline-block",
+      "margin-top": "50%"
+    })
+  }
+
+  this._hideLoader = () => {
+    this.$companyDIV.find(".loader").css("display", "none")
+  }
 
   this._renderStructure = () => {
-    this.$companyDIV.append(`
-        <div id="company-wrapper">
-            <div id="loader" class="spinner-border text-primary mx-auto" role="status" style="display: none">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            
-            <div id="company">
-                <div id="company-img"></div>
-                <div id="company-info"></div>
-            </div>
-    
-            <div id="company-price">
-                <div id="stock-price"></div>
-                <div id="stock-percent"></div>
-            </div>
-    
-            <p id="company-desc"></p>
-    
-            <canvas id="company-chart" width="600" height="300"></canvas>
-        </div>  
-        `)
+    console.log("Rendering company: " + this.symbol)
 
+    this.$companyDIV.append(`
+
+        <div class="loader spinner-border text-primary mx-auto" role="status" style="display: none">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+
+        <div class="company">
+          <div class="company-img"></div>
+          <div class="company-info"></div>
+        </div>
+
+        <div class="company-price">
+          <div class="stock-price"></div>
+          <div class="stock-percent"></div>
+        </div>
+
+        <p class="company-desc"></p>
+
+        <canvas class="company-chart" id="${this.symbol}" width="600" height="300"></canvas>
+
+    `)
   }
 
   this.load = async () => {
@@ -41,15 +50,13 @@ export function CompanyInfo(div, symbol) {
     this._showLoader()
 
     try {
-      //TODO: run this func in search controller and just get the data from getProfileData
-      //await stockExchange.loadCompanyProfile(symbol)
-      const profileData = stockExchange.getProfileData(symbol)
+      const profileData = stockExchange.getProfileData(this.symbol)
 
       if (!profileData) {
-        console.log("No results found.")
+        console.warn("No results found.")
         render.renderInfoError("No results found.")
       } else {
-        render.renderCompanyProfile(profileData)
+        render.renderCompanyProfile(profileData, this.$companyDIV)
       }
     } catch (err) {
       console.error("Error loading data:", err.message)
@@ -63,19 +70,17 @@ export function CompanyInfo(div, symbol) {
     this._showLoader()
 
     try {
-      //TODO: remove before fligth
-      //await stockExchange.loadCompanyHistory(symbol)
       const historyData = stockExchange.getHistoryData()
 
       if (!historyData) {
-        console.log("No results found.")
-        render.renderInfoError("No results found.")
+        console.warn("No chart data found.")
+        render.renderInfoError("No chart data found.")
       } else {
-        render.renderChart(historyData)
+        render.renderChart(historyData, this.symbol, this.$companyDIV )
       }
     } catch (err) {
-      console.error("Error loading data:", err.message)
-      render.renderInfoError("An error occurred. Please try again later.")
+      console.error("Error loading chart data:", err.message)
+      render.renderInfoError("An error occurred while loading the chart.")
     } finally {
       this._hideLoader()
     }

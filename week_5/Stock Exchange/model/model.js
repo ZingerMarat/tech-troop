@@ -611,7 +611,7 @@ export const StockExchange = () => {
 
   const getProfileData = (companySymbol) => {
     const company = _companiesProfileData.find(elem => elem.symbol === companySymbol)
-    console.log(company);
+    //console.log(company);
     
     return company
   }

@@ -12,7 +12,7 @@ export function CompareList() {
   })
 
   this.addToList = (company) => {
-    console.log(company)
+    //console.log(company)
 
     if (!this.companiesList.find((c) => c.symbol === company.symbol)) {
       this.companiesList.push(company)
@@ -43,8 +43,10 @@ export function CompareList() {
         return
     }
 
+    const symbols = this.companiesList.map(item => item.symbol).join(',')
+
     const $btn = $(`
-    <a class="compare-btn">Compare ${this.companiesList.length} items</a>
+    <a href=./compare.html?symbols=${symbols} class="compare-btn">Compare ${this.companiesList.length} items</a>
   `)
 
     $wrapper.append($btn)

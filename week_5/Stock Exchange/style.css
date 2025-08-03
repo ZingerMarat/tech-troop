@@ -2,20 +2,20 @@
   box-sizing: border-box;
 }
 
-.main-wrapper{
+.main-wrapper {
   width: 50%;
   display: flex;
   justify-self: center;
 }
 
-.compare-list-wrapper{
+.compare-list-wrapper {
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding-top: 1rem;
 }
 
-.compare-list{
+.compare-list {
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
@@ -25,8 +25,7 @@
   flex: 0 0 auto;
 }
 
-
-.compared-company{
+.compared-company {
   display: flex;
   justify-content: space-between;
   width: 6rem;
@@ -59,54 +58,61 @@
   justify-content: center;
 }
 
-#company-wrapper {
+.company-wrapper {
   display: flex;
   flex-direction: column;
   justify-self: center;
-  width: 50rem;
+  width: 50%;
+
+  order: 1px solid #e0e0e0; /* светло-серый бордер */
+  border-radius: 10px; /* скруглённые углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* мягкая тень */
+  margin: 1rem;
+  padding: 1rem;
+  margin-top: 3rem;
 }
 
-#company {
+.company {
   display: flex;
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
 }
 
-#company-img img {
+.company-img img {
   width: 80px;
   height: auto;
 }
 
-#company-info {
+.company-info {
   font-size: 24px;
   font-weight: bold;
   color: #4b00ff;
 }
 
-#company-price {
+.company-price {
   font-size: 22px;
   margin-bottom: 20px;
 }
 
-#stock-price {
+.stock-price {
   display: inline;
   font-weight: bold;
   color: #000;
 }
 
-#stock-percent {
+.stock-percent {
   display: inline;
   margin-left: 10px;
 }
 
-#company-disc {
+.company-disc {
   font-size: 16px;
   line-height: 1.6;
   color: #333;
 }
 
-#company-chart {
+.company-chart {
   margin-top: 30px;
 }
 
@@ -158,4 +164,16 @@
 
 .symbol {
   font-size: 0.8rem;
+}
+
+.companies-for-compare {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.companies-for-compare > .company-wrapper {
+  flex: 0 0 30%;
+  max-width: 30%;
 }
