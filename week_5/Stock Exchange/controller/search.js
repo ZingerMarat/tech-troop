@@ -13,7 +13,7 @@ function init() {
 
 //Setup marquee scrolling stock list
 function setupMarquee() {
-  new Marquee($("#marquee")).create()
+  new Marquee($(".marquee")).create()
 }
 
 //Render the search form and results container

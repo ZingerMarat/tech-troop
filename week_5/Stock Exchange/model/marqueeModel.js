@@ -384,7 +384,7 @@ export function Marquee(div) {
         const color = elem.changesPercentage >= 0 ? "green" : "red"
 
         const $marqueeItem = $(`
-                            <div id="marquee-item">
+                            <div class="marquee-item">
                                 ${elem.ticker} <span style="color: ${color}">($${elem.price})</span>
                             </div>
                             `)
