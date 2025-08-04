@@ -1,4 +1,4 @@
-import { StockExchange } from "../model/model.js"
+import { StockExchange } from "../model/stockModel.js"
 import { Render } from "../view/view.js"
 
 const stockExchange = StockExchange()
